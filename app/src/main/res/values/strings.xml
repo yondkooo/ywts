@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Санхүү</string>
+    <string name="income">Орлого</string>
+    <string name="only_income">Зөвхөн орлогыг харуулах</string>
+    <string name="only_expense">Зөвхөн зарлагыг харуулах</string>
+    <string name="expense">Зарлага</string>
+    <string name="all">Орлого, зарлагыг хоёуланг нь харуулах</string>
+    <string name="prev">ӨМНӨХ</string>
+    <string name="next">ДАРААХ</string>
+    <string name="add_income">+ Орлого нэмэх</string>
+    <string name="add_expense">+ Зарлага нэмэх</string>
+    <string name="add_title">Бүртгэл нэмэх</string>
+    <string name="edit">ЗАСАХ</string>
+    <string name="delete">УСТГАХ</string>
+    <string name="save">ХАДГАЛАХ</string>
+    <string name="cancel">ЦУЦЛАХ</string>
+    <string name="settings">Тохиргоо</string>
+    <string name="edit_title">Бүртгэл засах</string>
+    <string name="empty">Бүртгэл байхгүй байна</string>
+    <string name="delete_title">Устгах эсэх?</string>
+    <string name="delete_confirm">Энэ бүртгэлийг устгах уу?</string>
+    <string name="yes">ТИЙМ</string>
+    <string name="no">ҮГҮЙ</string>
+    <string name="name_hint">Нэр</string>
+    <string name="category_hint">Ангилал</string>
+    <string name="new_category">+ Шинэ ангилал</string>
+    <string name="new_category_hint">Ангиллын нэр</string>
+    <string name="ok">ОК</string>
+    <string name="amount_hint">Мөнгөн дүн (₮)</string>
+    <string name="date_hint">Огноо</string>
+    <string name="note_hint">Тэмдэглэл</string>
+    <string name="fill_all">Нэр болон дүнг зөв бөглөнө үү</string>
+    <string name="filter_title">Харуулах бүртгэлийн төрөл</string>
+</resources>

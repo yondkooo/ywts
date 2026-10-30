@@ -1,7 +1,6 @@
 package com.example.ywts
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatDelegate
 
 class App : Application() {
     val repository by lazy { RecordRepository(this) }
@@ -10,6 +9,5 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         Reminder.createChannel(this)
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 }

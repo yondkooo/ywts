@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="income">#FF66BB6A</color>
-    <color name="expense">#FFEF5350</color>
-    <color name="nav_bg">#FF2A2A2A</color>
-    <color name="circle_bg">#FF3A3A3A</color>
-    <color name="card_bg">#FF1E1E1E</color>
-</resources>

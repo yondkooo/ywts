@@ -22,12 +22,10 @@
         </activity>
         <activity
             android:name=".EditActivity"
-            android:label="@string/edit_title"
-            android:parentActivityName=".MainActivity" />
+            android:label="@string/edit_title" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/settings"
-            android:parentActivityName=".MainActivity" />
+            android:label="@string/settings" />
     </application>
 
 </manifest>

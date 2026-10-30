@@ -22,6 +22,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -44,7 +45,8 @@ fun SettingsScreen(vm: SettingsViewModel, onBack: () -> Unit) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.settings)) },
+                modifier = Modifier.shadow(4.dp),
+                title = { Text(stringResource(R.string.settings), fontSize = 20.sp) },
                 navigationIcon = { TextButton(onClick = onBack) { Text("←", color = Color.White, fontSize = 22.sp) } },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Blue, titleContentColor = Color.White),
             )
@@ -64,6 +66,7 @@ fun SettingsScreen(vm: SettingsViewModel, onBack: () -> Unit) {
             Button(
                 onClick = { vm.setFilter(selected); onBack() },
                 modifier = Modifier.fillMaxWidth().padding(top = 16.dp),
+                shape = ButtonShape,
             ) { Text(stringResource(R.string.save)) }
         }
     }

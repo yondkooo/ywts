@@ -35,7 +35,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
@@ -109,7 +112,8 @@ fun EditScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(if (id == 0L) R.string.add_title else R.string.edit_title)) },
+                modifier = Modifier.shadow(4.dp),
+                title = { Text(stringResource(if (id == 0L) R.string.add_title else R.string.edit_title), fontSize = 20.sp) },
                 navigationIcon = { TextButton(onClick = onBack) { Text("←", color = Color.White, fontSize = 22.sp) } },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Blue, titleContentColor = Color.White),
             )
@@ -124,9 +128,15 @@ fun EditScreen(
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             // Орлого | Зарлага
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                TypeButton(stringResource(R.string.income), type == Record.INCOME, Modifier.weight(1f)) { type = Record.INCOME }
-                TypeButton(stringResource(R.string.expense), type == Record.EXPENSE, Modifier.weight(1f)) { type = Record.EXPENSE }
+            Row {
+                TypeButton(
+                    stringResource(R.string.income).uppercase(), type == Record.INCOME, Modifier.weight(1f),
+                    RoundedCornerShape(topStart = 4.dp, bottomStart = 4.dp),
+                ) { type = Record.INCOME }
+                TypeButton(
+                    stringResource(R.string.expense).uppercase(), type == Record.EXPENSE, Modifier.weight(1f),
+                    RoundedCornerShape(topEnd = 4.dp, bottomEnd = 4.dp),
+                ) { type = Record.EXPENSE }
             }
 
             // Ангилал (dropdown)
@@ -196,6 +206,7 @@ fun EditScreen(
                     }
                 },
                 modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
+                shape = ButtonShape,
             ) { Text(stringResource(R.string.save)) }
         }
     }
@@ -244,7 +255,7 @@ fun EditScreen(
 }
 
 @Composable
-private fun TypeButton(text: String, selected: Boolean, modifier: Modifier, onClick: () -> Unit) {
-    if (selected) Button(onClick = onClick, modifier = modifier) { Text(text) }
-    else OutlinedButton(onClick = onClick, modifier = modifier) { Text(text) }
+private fun TypeButton(text: String, selected: Boolean, modifier: Modifier, shape: Shape, onClick: () -> Unit) {
+    if (selected) Button(onClick = onClick, modifier = modifier, shape = shape) { Text(text) }
+    else OutlinedButton(onClick = onClick, modifier = modifier, shape = shape) { Text(text) }
 }

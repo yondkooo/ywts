@@ -47,6 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
@@ -88,7 +89,8 @@ fun MainScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.app_name)) },
+                modifier = Modifier.shadow(4.dp),
+                title = { Text(stringResource(R.string.app_name), fontSize = 20.sp) },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Blue,
                     titleContentColor = Color.White,
@@ -118,13 +120,15 @@ fun MainScreen(
                 Button(
                     onClick = { onAdd(Record.INCOME) },
                     modifier = Modifier.weight(1f),
+                    shape = ButtonShape,
                     colors = ButtonDefaults.buttonColors(containerColor = IncomeColor),
-                ) { Text(stringResource(R.string.add_income)) }
+                ) { Text(stringResource(R.string.add_income).uppercase()) }
                 Button(
                     onClick = { onAdd(Record.EXPENSE) },
                     modifier = Modifier.weight(1f),
+                    shape = ButtonShape,
                     colors = ButtonDefaults.buttonColors(containerColor = ExpenseColor),
-                ) { Text(stringResource(R.string.add_expense)) }
+                ) { Text(stringResource(R.string.add_expense).uppercase()) }
             }
         },
     ) { padding ->
